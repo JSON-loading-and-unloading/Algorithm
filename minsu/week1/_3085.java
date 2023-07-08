@@ -1,4 +1,4 @@
-// 메모리 1003kb 시간복잡도 O(n^2)
+// 메모리 1003kb 시간복잡도 O(n^4)
 
 import java.util.*;
 public class _3085 {
