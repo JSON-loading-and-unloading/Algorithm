@@ -1,4 +1,4 @@
-package Baekjoon.baekjoon_bruteForce;
+package week1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
