@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+// 메모리 25792KB, 시간 복잡도 O(N)
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int t = scanner.nextInt();
+        for (int i = 0; i < t; i++) {
+            int m = scanner.nextInt();
+            int n = scanner.nextInt();
+            int x = scanner.nextInt();
+            int y = scanner.nextInt();
+            System.out.println(num(m, n, x, y));
+        }
+
+        scanner.close();
+    }
+
+    public static int num(int m, int n, int x, int y) {
+        while (x <= m * n) {
+            if ((x - y) % n == 0) {
+                return x;
+            }
+            x += m;
+        }
+        return -1;
+    }
+}
