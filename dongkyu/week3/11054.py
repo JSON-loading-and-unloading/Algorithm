@@ -1,4 +1,4 @@
-# n^2log(n)
+# O(n^2 log n)
 
 import bisect
 import sys
