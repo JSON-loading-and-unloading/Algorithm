@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+ 
+// 메모리 64452KB 시간복잡도 O(N + 999999 * M) N = n, M = str.length()
+public class Main{  
+    static boolean[] isBroken = new boolean[10]; 
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int channel = Integer.parseInt(br.readLine()); 
+        int n = Integer.parseInt(br.readLine());
+        
+        if (n != 0) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            for(int i = 0; i < n; i++) {
+                int m = Integer.parseInt(st.nextToken());
+                isBroken[m] = true;
+            }
+        }
+        
+        // +,- 로만 움직이는 케이스와, 비교하는 케이스로 나누어 최소값을 구하기
+        int answer = Math.abs(channel - 100); // +,-로만 움직이는 케이스
+        for(int i = 0; i <= 999999; i++) {
+            String str = String.valueOf(i);
+           
+            boolean isPossible = true;
+            for(int j = 0; j < str.length(); j++) {
+                int btn = str.charAt(j) - '0';
+                if(isBroken[btn]) { 
+                    isPossible = false; 
+                    break;
+                }
+            }
+            
+            if(isPossible) {
+                int count = str.length() + Math.abs(i - channel);
+                answer = Math.min(count, answer);
+            }
+        }        
+        System.out.println(answer);
+    }
+}
