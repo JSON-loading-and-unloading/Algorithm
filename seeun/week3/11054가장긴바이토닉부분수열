@@ -1,0 +1,42 @@
+import java.util.*;
+// 메모리 21092KB, 시간복잡도 O(N^2)
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int answer;
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        int[] Ldp = new int[n];
+        int[] Rdp = new int[n];
+
+
+        for(int i = 0 ; i < n; i++){
+            arr[i] = sc.nextInt();
+            Ldp[i] = 1;
+            Rdp[i] = 1;
+        }
+
+        for(int i = 0 ; i < n; i++){
+            for(int j = 0; j < i; j++){
+                if(arr[i] > arr[j])
+                    Ldp[i] = Math.max(Ldp[i], Ldp[j]+1);
+            }
+        }
+
+        for(int i = n-1 ; i > -1; i--){
+            for(int j = n-1 ; j > i; j--){
+                if(arr[i] > arr[j])
+                    Rdp[i] = Math.max(Rdp[i], Rdp[j]+1);
+            }
+        }
+
+        answer = 1;
+        for(int i = 0; i < n; i++){
+            if(Ldp[i] + Rdp[i] - 1 > answer){
+                answer = Ldp[i] + Rdp[i] - 1;
+            }
+        }
+
+        System.out.println(answer);
+    }
+}
