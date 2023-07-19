@@ -2,8 +2,8 @@ import java.util.*;
 import java.io.*;
 
 // 2133: 타일 채우기
-// O(N^2), N <= 1000, 164ms 
-// 14828B
+// O(N^2), N <= 30, 148ms 
+// 1492KB
 
 public class Main{
     static int N;
