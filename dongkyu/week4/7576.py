@@ -8,17 +8,12 @@ def go(m, n, graph):
         for j in range(m):
             if graph[i][j] == 1:
                 queue.append((i, j, 0))
-    dy = [0, 0, 1, -1]
-    dx = [1, -1, 0, 0]
     result = 0
     while queue:
         y, x, day = queue.popleft()
         result = max(result, day)
 
-        for i in range(4):
-            ny = y + dy[i]
-            nx = x + dx[i]
-
+        for ny, nx in [(y, x + 1), (y, x - 1), (y + 1, x), (y - 1, x)]:
             if 0 <= ny < n and 0 <= nx < m and graph[ny][nx] == 0:
                 graph[ny][nx] = 1
                 queue.append((ny, nx, day + 1))
