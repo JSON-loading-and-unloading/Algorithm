@@ -23,7 +23,7 @@ public class B_11054 {
 			S[i] = Integer.parseInt(st.nextToken());
 		}
 
-		// 상승
+		// 상승(가장 긴 증가부분의 수열의 길이)
 		for (int i = 0; i < N; i++) {
 			int max = 0;
 			for (int j = 0; j < i; j++) {
