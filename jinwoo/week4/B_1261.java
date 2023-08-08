@@ -61,8 +61,7 @@ public class B_1261 {
             if (p.x == N-1 && p.y == M-1) {
                 return p.cnt;
             }
- 
-
+            
             if(p.x<0 || p.y<0 || p.x>N-1 || p.y>M-1) continue;
             if(chk[p.x][p.y]==1) continue;
             if(arr[p.x][p.y] == 1) {

@@ -41,7 +41,7 @@ public class B_13913 {
 
         queue.offer(N); //자신
         queue.offer(0); //부모
-        queue.offer(0);
+        queue.offer(0); //횟수 
         
         while(!queue.isEmpty()){
             int x = queue.poll();
