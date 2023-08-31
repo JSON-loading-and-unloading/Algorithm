@@ -18,6 +18,13 @@ public class B_9252 {
      * .
      * .
      * .
+     * 0 C A P C A K
+     * A 0 1 1 1 1 1
+     * C 1 1
+     * A 1
+     * Y 1
+     * K 1
+     * P 1
      * 각 위치마다 같은지 체크하여 같으면 dp[first-1][second-1]+1 저장
      * 다르다면 Dp[first-1][second] dp[first][second-1] 비교 후 큰거 저장
      */
