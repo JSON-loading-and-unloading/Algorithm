@@ -1,5 +1,11 @@
 package jinwoo.week10;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 class Music{
     String genre;
     int play;
@@ -62,5 +68,4 @@ public class P_베스트앨범 {
         }
         return answer;
     }
-}
 }
